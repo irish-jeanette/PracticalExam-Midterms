@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.rocs.self.checkout.application.SelfCheckoutController">
+   <children>
+      <VBox spacing="10" layoutX="20" layoutY="20">
+         <Label text="CUSTOMER ID"/>
+         <TextField fx:id="customerIdField" onAction="#onCustomerIdEnter"/>
+         <Label text="CUSTOMER NAME"/>
+         <TextField fx:id="customerNameField" editable="false"/>
+         <Label text="ITEM ID"/>
+         <TextField fx:id="itemIdField" onAction="#onItemIdEnter"/>
+         <Label text="DESCRIPTION"/>
+         <TextField fx:id="descriptionField" editable="false"/>
+         <Label text="PRICE"/>
+         <TextField fx:id="priceField" editable="false"/>
+         <Label text="QUANTITY"/>
+         <TextField fx:id="quantityField"/>
+         <Button text="ADD TO CART" onAction="#onAddToCart"/>
+      </VBox>
+
+      <TableView fx:id="cartTable" layoutX="300" layoutY="20" prefWidth="500" prefHeight="300">
+         <columns>
+            <TableColumn text="Item Code" fx:id="colItemId"/>
+            <TableColumn text="Item" fx:id="colDescription"/>
+            <TableColumn text="Price" fx:id="colPrice"/>
+            <TableColumn text="Quantity" fx:id="colQuantity"/>
+         </columns>
+      </TableView>
+
+      <Button text="CHECKOUT" layoutX="700" layoutY="330" onAction="#onCheckout"/>
+   </children>
+</AnchorPane>
